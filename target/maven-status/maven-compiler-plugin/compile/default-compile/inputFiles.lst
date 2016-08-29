@@ -1,4 +1,22 @@
-C:\Users\Azka IT Consulting\Documents\NetBeansProjects\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\Administrador.java
-C:\Users\Azka IT Consulting\Documents\NetBeansProjects\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\Administrador.java
-C:\Users\Azka IT Consulting\Documents\NetBeansProjects\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\controller\Administrador.java
-C:\Users\Azka IT Consulting\Documents\NetBeansProjects\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\admin\Administrador.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CePermisosFacade.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeComentariosFacadeLocal.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\CeEmpleado.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeUsuarioFacade.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CePermisosFacadeLocal.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\controller\Administrador.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\CeComentarios.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeUsuarioFacadeLocal.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeEquiposFacadeLocal.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\admin\Administrador.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\CeUsuario.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeEmpleadoFacadeLocal.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\CeEquipos.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeProyectoFacade.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\CePermisos.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\entity\CeProyecto.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\AbstractFacade.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeEmpleadoFacade.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeEquiposFacade.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\controller\HomeController.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeProyectoFacadeLocal.java
+C:\Users\LEONEL\Documents\ControlDeEquipos\src\main\java\mx\azka\controlDeEquipos\ejb\CeComentariosFacade.java
