@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Administrar Usuarios</title>
+    </h:head>
+    <h:body>
+        <h:form>
+             <p:fieldset legend="Usuario" style="margin-bottom:20px">
+            <h3>Datos Usuario</h3>
+           <p:outputLabel for="CEEMPLEADO_EMPIDEMPLEADO" value="Número Empleado" />
+           <br></br>
+            <p:inputText id="CEEMPLEADO_EMPIDEMPLEADO"  />
+               <br></br>
+               
+               
+               
+            <p:outputLabel for="USUDEPARTAMENTO" value="Departamento" />
+            <br></br>
+               <p:selectOneMenu id="USUDEPARTAMENTO" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Talento Humano" itemValue="Talento Humano" />
+            <f:selectItem itemLabel="Finanzas" itemValue="Finanzas" />
+            <f:selectItem itemLabel="Soporte Tecnico" itemValue="Soporte Tecnico" />
+        </p:selectOneMenu> 
+           <br></br>
+            <p:outputLabel for="USUUSERNAME" value="Username" />
+            <br></br>
+            <p:inputText id="USUUSERNAME"  />
+         <br></br>
+            <p:outputLabel for="USUCONTRASEÑA" value="Contraseña" />
+            <br></br>
+            <p:inputText id="USUCONTRASEÑA" />       
+            <br></br>
+            <br></br>
+            <br></br>
+            <p:commandButton value="Editar"/>
+            <p:commandButton value="Eliminar"/>
+            <p:commandButton value="Guardar"/>
+             </p:fieldset>
+            </h:form>
+    </h:body>
+
+</html>

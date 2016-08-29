@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Detalle de Busqueda</title>
+    </h:head>
+    <h:body>
+        <h:form>
+             <p:fieldset legend="Equipo" style="margin-bottom:20px">
+            <h3>Datos Empleado</h3>
+           <p:outputLabel for="Nombre" value="Nombre" />
+           <br></br>
+            <p:inputText id="Nombre"/>
+               <br></br>
+             <h3>Datos Equipo</h3>
+            <p:outputLabel for="MarcaEquipo" value="Marca" />
+            <br></br>
+            <p:inputText id="MarcaEquipo" />
+           <br></br>
+            <p:outputLabel for="ModeloEquipo" value="Modelo" />
+            <br></br>
+            <p:inputText id="ModeloEquipo"  />
+         <br></br>
+            <p:outputLabel for="NumeroSerieEquipo" value="Numero de serie" />
+            <br></br>
+            <p:inputText id="NumeroSerieEquipo" />
+         <br></br>
+             <h3>Datos Cargador</h3>
+            <p:outputLabel for="MarcaCargador" value="Marca" />
+            <br></br>
+            <p:inputText id="MarcaCargador"  />
+       <br></br>
+            <p:outputLabel for="NumeroSerieCargador" value="Numero de serie" />
+            <br></br>
+            <p:inputText  id="NumeroSerieCargador"  />
+        <br></br>
+             <h3>Datos Compnentes de equipo</h3>
+         
+             <p:outputLabel for="MemoriaRAM" value="Memoria RAM" />
+            <br></br>
+            <p:inputText  id="MemoriaRAM"  />
+              <br></br>
+            <p:outputLabel for="DiscoDuro" value="Disco Duro" />
+            <br></br>
+            <p:inputText  id="DiscoDuro"   />
+                 <br></br>
+            <p:outputLabel for="ComAdic" value="Adicional" />
+           <br></br>
+            <p:inputText  id="ComAdic" />
+    <br></br>
+             <h3>Datos de Asignación</h3>
+            <p:outputLabel for="FechaAsignaInicia" value="Fecha inicio" />
+            <br></br>
+            <p:calendar id="FechaAsignaInicia" showOn="button"/>
+            <br></br>
+            <p:outputLabel for="FechaFinAsigna" value="Fecha final " />
+            <br></br>
+            <p:calendar id="FechaFinAsigna" showOn="button" />
+            <br></br>
+            <p:outputLabel for="FechaCompraEquipo" value="Fecha compra"/>
+            <br></br>
+            <p:calendar id="FechaCompraEquipo" showOn="button" />
+            <br></br>
+            <br></br>
+            <br></br>
+            <p:commandButton value="Editar"/>
+            <p:commandButton value="Eliminar"/>
+            <p:commandButton value="Guardar"/>
+             </p:fieldset>
+            </h:form>
+    </h:body>
+
+</html>
