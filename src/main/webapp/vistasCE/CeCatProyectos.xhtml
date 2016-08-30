@@ -25,13 +25,13 @@
                 </p:fieldset>
     
     <br></br><br></br>
-
-
-       <p:outputLabel value="Nombre del Proyecto" for ="nombre" />
-        <p:inputText id="nombre" value="" />
+    
+        
+       <p:outputLabel value="Nombre del Proyecto" for ="proDescripcion" />
+        <p:inputText id="proDescripcion" value="#{ceProyecto.proDescripcion}" />
            <br></br><br></br>
 
-                  <p:commandButton value="Registrar" icon="ui-icon-disk" />
+           <p:commandButton value="Registrar" icon="ui-icon-disk" actionListener="#{proyectoController.registrar()}"/>
 </h:form>
     </h:body>
 </html>
