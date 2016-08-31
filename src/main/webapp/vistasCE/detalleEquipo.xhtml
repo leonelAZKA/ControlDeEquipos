@@ -13,50 +13,52 @@
         <h1>DETALLE EQUIPOS</h1>
         <h:form>
             <h:panelGrid columns="2" cellpadding="5">
+                 <p:outputLabel value="ID Equipo"/>
+                 <p:inputText id="idEquipo"  value="#{detalleEquipoController.equipos.equID}" />
                 <p:outputLabel value="ID Empleado"/>
-                <p:inputText id="CEEMPLEADO_EMPIDEMPLEADO"  value="#{bean.CEEMPLEADO_EMPIDEMPLEADO}" />
+                <p:inputText id="CEEMPLEADO_EMPIDEMPLEADO"  value="#{detalleEquipoController.equipos.empIDEMPLEADO}" />
                 
                 <p:outputLabel value="Nombre: "/>
-                <p:inputText id="NOMBRE" placeholder="Nombre del empleado" value="#{bean.nombre}" />
+                <p:inputText id="NOMBRE" placeholder="Nombre del empleado" />
                 
                 <p:outputLabel  value="Marca Equipo: "/>
-                <p:inputText  id="EQUMARCAE" placeholder="Marca del Equipo" value="#{bean.equmarcae}"/>
+                <p:inputText  id="EQUMARCAE" placeholder="Marca del Equipo" value="#{detalleEquipoController.equipos.equMARCAE}"/>
                 
                 
                 <p:outputLabel value="Modelo Equipo:"/>
-                <p:inputText id="EQUMODELO" placeholder="Modelo del Equipo" value="#{bean.equmodelo}"/>
+                <p:inputText id="EQUMODELO" placeholder="Modelo del Equipo" value="#{detalleEquipoController.equipos.equMODELO}"/>
                 
                 <p:outputLabel value="N/S Equipo:"/>
-                <p:inputText id="EQUNSE" placeholder="Num de serie del Equipo" value="#{bean.equese}"/>
+                <p:inputText id="EQUNSE" placeholder="Num de serie del Equipo" value="#{detalleEquipoController.equipos.equNSE}"/>
                 
                 <p:outputLabel value="Marca Cargador:"/>
-                <p:inputText id="EQUMARCAC" placeholder="Marca de Cargador" value="#{bean.equmarcac}"/>
+                <p:inputText id="EQUMARCAC" placeholder="Marca de Cargador" value="#{detalleEquipoController.equipos.equMARCAC}"/>
                 
                 <p:outputLabel value="N/S Cargador:"/>
-                <p:inputText id="EQUNSC" placeholder="Num Serie Cargador" value="#{bean.equnsc}"/>
+                <p:inputText id="EQUNSC" placeholder="Num Serie Cargador" value="#{detalleEquipoController.equipos.equNSC}"/>
                 
                 <p:outputLabel value="Memoria RAM:"/>
-                <p:inputText id="EQUMEMORIA" placeholder="Capacidad de la memoria RAM" value="#{bean.equmemoria}"/>
+                <p:inputText id="EQUMEMORIA" placeholder="Capacidad de la memoria RAM" value="#{detalleEquipoController.equipos.equMEMORIA}"/>
                 
                 <p:outputLabel value="Memoria Disco Duro:"/>
-                <p:inputText id="EQUDISCO_DURO" placeholder="Capacidad del Disco Duro" value="#{bean.equdisco_duro}"/>
+                <p:inputText id="EQUDISCO_DURO" placeholder="Capacidad del Disco Duro" value="#{detalleEquipoController.equipos.equDISCODURO}"/>
                 
                 <p:outputLabel value="Adicional:"/>
-                <p:inputText id="EQUADICIONAL" placeholder="Equipos adicionales" value="#{bean.equadicional}"/>
+                <p:inputText id="EQUADICIONAL" placeholder="Equipos adicionales" value="#{detalleEquipoController.equipos.equADICIONAL}"/>
                 
                 <p:outputLabel  value="Fecha Inicio:"  for="fechaInicio"/>
-                <p:calendar id="fechaInicio" value="#{calendarView.date3}" showOn="button" />
+                <p:calendar id="fechaInicio" value="#{detalleEquipoController.equipos.equFECHAINICIO}" showOn="button" />
         
                 <p:outputLabel for="fechaFin" value="Fecha Fin:" />
-                <p:calendar id="fechaFin" value="#{calendarView.date3}" showOn="button" />
+                <p:calendar id="fechaFin" value="#{detalleEquipoController.equipos.equFECHAFIN}" showOn="button" />
                 <p:outputLabel for="fechaCompra" value="Fecha Compra:" />
-                <p:calendar id="fechaCompra" value="#{calendarView.date3}" showOn="button" />
+                <p:calendar id="fechaCompra" value="#{detalleEquipoController.equipos.equFECHACOMPRA}" showOn="button" />
 
                 <p:commandButton  value="Editar" icon="ui-icon-pencil"/>
                 
-                <p:commandButton  value="Eliminar" icon="ui-icon-trash"/>
+                <p:commandButton  value="Eliminar" icon="ui-icon-trash" actionListener="#{detalleEquipoController.remove()}"/>
 
-                <p:commandButton  value="Guardar" icon="ui-icon-folder"/>
+                <p:commandButton  value="Guardar" icon="ui-icon-folder" actionListener="#{detalleEquipoController.editar()}"/>
                
             </h:panelGrid>
         </h:form>

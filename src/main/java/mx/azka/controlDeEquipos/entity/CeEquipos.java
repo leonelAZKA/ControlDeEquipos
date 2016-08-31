@@ -19,10 +19,18 @@ public class CeEquipos implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEquipo;
+    private int equID;
+
+    public int getEquID() {
+        return equID;
+    }
+
+    public void setEquID(int equID) {
+        this.equID = equID;
+    }
 
     
-    @Column(name = "EMPIDEMPLEADO")
+    @Column(name = "CEEMPLEADO_EMPIDEMPLEADO")
     private int empIDEMPLEADO;
         
     
@@ -44,31 +52,25 @@ public class CeEquipos implements Serializable {
     @Column(name = "EQUMEMORIA")
     private String equMEMORIA;
     
-    @Column(name = "EQUDISCODURO")
+    @Column(name = "EQUDISCO_DURO")
     private String equDISCODURO;
     
     @Column(name = "EQUADICIONAL")
     private String equADICIONAL; 
 
-    @Column(name = "EQUFECHAINICIO")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "EQUFECHA_INICIO")
+    @Temporal(TemporalType.DATE)
     private Date equFECHAINICIO;
     
-    @Column(name = "EQUFECHAFIN")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "EQUFECHA_FIN")
+    @Temporal(TemporalType.DATE)
     private Date equFECHAFIN;
     
-    @Column(name = "EQUFECHACOMPRA")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "EQUFECHA_COMPRA")
+    @Temporal(TemporalType.DATE)
     private Date equFECHACOMPRA;
 
-    public int getIdEquipo() {
-        return idEquipo;
-    }
 
-    public void setIdEquipo(int idEquipo) {
-        this.idEquipo = idEquipo;
-    }
 
     public int getEmpIDEMPLEADO() {
         return empIDEMPLEADO;
