@@ -3,7 +3,7 @@ package mx.azka.controlDeEquipos.controller;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import mx.azka.controlDeEquipos.ejb.CeProyectoFacadeLocal;
 import mx.azka.controlDeEquipos.entity.CeProyecto;
@@ -24,6 +24,7 @@ public class ProyectoController implements Serializable{
     public void setCeProyecto(CeProyecto ceProyecto) {
         this.ceProyecto = ceProyecto;
     }
+
     
     @PostConstruct
     public void init(){
@@ -35,7 +36,7 @@ public class ProyectoController implements Serializable{
             System.out.println("entra a registrar");
             proyectoEjb.create(ceProyecto);
         }catch(Exception e){
-            
+            //
         }
     }
 }

@@ -9,7 +9,7 @@
     </h:head>
     <h:body>
 
-<h:form>
+        <h:form enctype="multipart/form-data">
            <p:fieldset id="Proyecto" legend="Proyectos">
                <h:dataTable value=""  var="item">
                <p:column> <f:facet name="header">ID PROYECTO</f:facet></p:column>
@@ -25,10 +25,11 @@
                 </p:fieldset>
     
     <br></br><br></br>
-    
+           <p:outputLabel value="Id proyecto" for ="proIdProyecto" />
+           <p:inputText id="proIdProyecto" value="#{proyectoController.ceProyecto.proIdProyecto}" />
         
        <p:outputLabel value="Nombre del Proyecto" for ="proDescripcion" />
-        <p:inputText id="proDescripcion" value="#{ceProyecto.proDescripcion}" />
+       <p:inputText id="proDescripcion" value="#{proyectoController.ceProyecto.proDescripcion}" />
            <br></br><br></br>
 
            <p:commandButton value="Registrar" icon="ui-icon-disk" actionListener="#{proyectoController.registrar()}"/>
