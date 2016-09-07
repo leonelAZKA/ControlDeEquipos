@@ -23,6 +23,7 @@ public class DetalleEquipoController implements Serializable{
     private CeEmpleadoFacadeLocal empleadoEjb;
     private CeEquipos equipos;
     private CeEmpleado ceEmpelado;
+    private int idemp;
 
     public CeEmpleado getCeEmpelado() {
         return ceEmpelado;
@@ -46,6 +47,7 @@ public class DetalleEquipoController implements Serializable{
             int i = 0;
             for (CeEmpleado empleado: al) {
                 listEmpleados.add(new SelectItem(i, empleado.getEmpNombre()+ " "+ empleado.getEmpAppPaterno()+" "+empleado.getEmpAppMaterno()));
+                idemp=empleado.getEmpIdEmpleado();
                 i++;
             }
             return listEmpleados;
@@ -65,16 +67,24 @@ public class DetalleEquipoController implements Serializable{
 
   public void guardar(){
         try{
-      
-            equiposEjb.edit(equipos);
-   
+             System.out.println(equipos.getEquID());
+      if(equipos.getEquID()==0){
+          equipos.setEmpIDEMPLEADO(idemp);
+          equiposEjb.create(equipos);
+      }
+      else
+      {
+           System.out.println("Entra a modificar detalle empleado");
+            equipos.setEmpIDEMPLEADO(idemp);
+          equiposEjb.edit(equipos);
+      }
         }catch(Exception e){
             //
         }
     }
  public void eliminar(){
         try{
-         
+         equipos.setEmpIDEMPLEADO(155);
             equiposEjb.remove(equipos);
         }catch(Exception e){
             //
