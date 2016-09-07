@@ -14,24 +14,25 @@ import javax.persistence.Table;
 public class CeUsuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
+    private int idUsuarios;
+
+    public int getIdUsuarios() {
+        return idUsuarios;
+    }
+
+    public void setIdUsuarios(int idUsuarios) {
+        this.idUsuarios = idUsuarios;
+    }
     @Column(name = "CEEMPLEADO_EMPIDEMPLEADO")
     private int idEmpleado;
     @Column(name = "USUDEPARTAMENTO")
     private String depto;
     @Column(name = "USUUSERNAME")
     private String User;
-    @Column(name = "USUCONTRASEÑA")
+    @Column(name = "USUPASSWORD")
     private String pass;
 
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
+ 
     public int getIdEmpleado() {
         return idEmpleado;
     }

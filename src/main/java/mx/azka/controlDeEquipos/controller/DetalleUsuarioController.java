@@ -9,35 +9,34 @@ import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacadeLocal;
-import mx.azka.controlDeEquipos.ejb.CeEquiposFacadeLocal;
+
+import mx.azka.controlDeEquipos.ejb.CeUsuarioFacadeLocal;
 import mx.azka.controlDeEquipos.entity.CeEmpleado;
-import mx.azka.controlDeEquipos.entity.CeEquipos;
+
+import mx.azka.controlDeEquipos.entity.CeUsuario;
 
 @Named
 @ViewScoped
-public class DetalleEquipoController implements Serializable{
+public class DetalleUsuarioController implements Serializable{
     
  @EJB
-    private CeEquiposFacadeLocal equiposEjb;
+    private CeUsuarioFacadeLocal usuarioEjb;
  @EJB
     private CeEmpleadoFacadeLocal empleadoEjb;
-    private CeEquipos equipos;
-    private CeEmpleado ceEmpelado;
-    private int idemp;
+    private CeUsuario usuario;
 
-    public CeEmpleado getCeEmpelado() {
-        return ceEmpelado;
+    public CeUsuario getUsuario() {
+        return usuario;
     }
 
-    public void setCeEmpelado(CeEmpleado ceEmpelado) {
-        this.ceEmpelado = ceEmpelado;
+    public void setUsuario(CeUsuario usuario) {
+        this.usuario = usuario;
     }
    
+    private int idemp;
+   
     private List< SelectItem> listEmpleados;
-    public CeEquipos getEquipos() {
-        return equipos;
-    }
-    
+  
 
   
     
@@ -54,39 +53,37 @@ public class DetalleEquipoController implements Serializable{
     }
  
  
-     public void setEquipos(CeEquipos equipos) {
-        this.equipos = equipos;
-    }
+    
       
     @PostConstruct
     public void init(){
-        equipos = new CeEquipos();
-        ceEmpelado = new CeEmpleado();
+        usuario = new CeUsuario();
         
     }
 
   public void guardar(){
-  
         try{
-             System.out.println(equipos.getEquID());
-      if(equipos.getEquID()==0){
-          equipos.setEmpIDEMPLEADO(idemp);
-          equiposEjb.create(equipos);
+        
+      if(usuario.getIdUsuarios()==0){
+          
+          usuario.setIdEmpleado(154);
+          usuarioEjb.create(usuario);
       }
       else
       {
            System.out.println("Entra a modificar detalle empleado");
-            equipos.setEmpIDEMPLEADO(idemp);
-          equiposEjb.edit(equipos);
+            usuario.setIdEmpleado(154);
+          usuarioEjb.edit(usuario);
       }
         }catch(Exception e){
             //
         }
     }
+
  public void eliminar(){
         try{
-         equipos.setEmpIDEMPLEADO(155);
-            equiposEjb.remove(equipos);
+         usuario.setIdEmpleado(155);
+            usuarioEjb.remove(usuario);
         }catch(Exception e){
             //
         }

@@ -10,16 +10,21 @@
         <h:form>
              <p:fieldset legend="Usuario" style="margin-bottom:20px">
             <h3>Datos Usuario</h3>
-           <p:outputLabel for="CEEMPLEADO_EMPIDEMPLEADO" value="Número Empleado" />
+           <p:outputLabel for="combo" value="Número Empleado" />
            <br></br>
-            <p:inputText id="CEEMPLEADO_EMPIDEMPLEADO"  />
+            <p:outputLabel value="Empleado:"/>
+            <br></br>
+            <p:selectOneMenu id="combo" value="#{detalleUsuarioController.usuario.idEmpleado}">
+                        <f:selectItem itemLabel="Select..."  noSelectionOption="true"/>
+                        <f:selectItems value="#{detalleEquipoController.allempleados}" />
+                    </p:selectOneMenu>
                <br></br>
                
                
                
             <p:outputLabel for="USUDEPARTAMENTO" value="Departamento" />
             <br></br>
-               <p:selectOneMenu id="USUDEPARTAMENTO" value="#{selectOneMenuView.console}" style="width:125px">
+            <p:selectOneMenu id="USUDEPARTAMENTO" value="#{detalleUsuarioController.usuario.depto}" style="width:125px">
             <f:selectItem itemLabel="Select One" itemValue="" />
             <f:selectItem itemLabel="Talento Humano" itemValue="Talento Humano" />
             <f:selectItem itemLabel="Finanzas" itemValue="Finanzas" />
@@ -28,17 +33,22 @@
            <br></br>
             <p:outputLabel for="USUUSERNAME" value="Username" />
             <br></br>
-            <p:inputText id="USUUSERNAME"  />
+            <p:inputText id="USUUSERNAME"  value="#{detalleUsuarioController.usuario.user}"/>
          <br></br>
             <p:outputLabel for="USUCONTRASEÑA" value="Contraseña" />
             <br></br>
-            <p:inputText id="USUCONTRASEÑA" />       
+            <p:inputText id="USUCONTRASEÑA" value="#{detalleUsuarioController.usuario.pass}"/>       
+            <br></br>
+             <p:outputLabel for="IdUsuarios" value="IdUsru" />
+            <br></br>
+            <p:inputText id="IdUsuarios" value="#{detalleUsuarioController.usuario.idUsuarios}"/>       
             <br></br>
             <br></br>
+            
             <br></br>
-            <p:commandButton value="Editar"/>
-            <p:commandButton value="Eliminar"/>
-            <p:commandButton value="Guardar"/>
+            <p:commandButton value="Editar" />
+            <p:commandButton value="Eliminar" actionListener="#{detalleUsuarioController.eliminar()}"/>
+            <p:commandButton value="Guardar" actionListener="#{detalleUsuarioController.guardar()}"/>
              </p:fieldset>
             </h:form>
     </h:body>
