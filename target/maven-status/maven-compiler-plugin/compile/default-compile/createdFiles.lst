@@ -8,6 +8,8 @@ mx\azka\controlDeEquipos\entity\CePermisos_.class
 mx\azka\controlDeEquipos\ejb\CeComentariosFacadeLocal.class
 mx\azka\controlDeEquipos\ejb\CeEquiposFacadeLocal.class
 mx\azka\controlDeEquipos\entity\CeUsuario_.class
+mx\azka\controlDeEquipos\controller\HomeController.class
+mx\azka\controlDeEquipos\controller\DetalleEquipoController.class
 mx\azka\controlDeEquipos\ejb\CeEquiposFacade.class
 mx\azka\controlDeEquipos\ejb\CeUsuarioFacade.class
 mx\azka\controlDeEquipos\ejb\CeEmpleadoFacadeLocal.class
@@ -18,6 +20,8 @@ mx\azka\controlDeEquipos\ejb\CeProyectoFacadeLocal.class
 mx\azka\controlDeEquipos\admin\Administrador.class
 mx\azka\controlDeEquipos\ejb\CeUsuarioFacadeLocal.class
 mx\azka\controlDeEquipos\entity\CeEmpleado_.class
+mx\azka\controlDeEquipos\controller\ProyectoController.class
+mx\azka\controlDeEquipos\controller\DetalleEmpleado.class
 mx\azka\controlDeEquipos\entity\CeEmpleado.class
 mx\azka\controlDeEquipos\entity\CeEquipos.class
 mx\azka\controlDeEquipos\entity\CeEquipos_.class
