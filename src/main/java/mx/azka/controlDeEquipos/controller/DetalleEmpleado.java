@@ -10,17 +10,18 @@ import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacadeLocal;
-import mx.azka.controlDeEquipos.ejb.CeProyectoFacadeLocal;
+import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacade;
+import mx.azka.controlDeEquipos.ejb.CeProyectoFacade;
+
 import mx.azka.controlDeEquipos.entity.CeEmpleado;
 import mx.azka.controlDeEquipos.entity.CeProyecto;
 @Named
 @ViewScoped
 public class DetalleEmpleado implements Serializable{
     @EJB
-    private CeEmpleadoFacadeLocal ceEmpleadoEjb;
+    private CeEmpleadoFacade ceEmpleadoEjb;
     @EJB
-    private CeProyectoFacadeLocal ceProyectoEjb;
+    private CeProyectoFacade ceProyectoEjb;
     private CeEmpleado ceEmpleado;
     private List< SelectItem> listProy;
     private CeProyecto ceProyecto;
@@ -47,7 +48,7 @@ public class DetalleEmpleado implements Serializable{
         listProy = new ArrayList<SelectItem>();
         while(pr.hasNext()){
             CeProyecto proy = pr.next();
-            listProy.add(new SelectItem(proy.getProIdProyecto(), proy.getProDescripcion()));
+            listProy.add(new SelectItem(proy.getProidproyecto(), proy.getProdescripcion()));
         }
         return listProy;
     }
@@ -55,7 +56,7 @@ public class DetalleEmpleado implements Serializable{
     public void actualizar(){
         try{
             System.out.println("Entra a modificar detalle empleado, idproy: "+ idProy);
-            if(ceEmpleadoEjb.find(ceEmpleado.getEmpIdEmpleado())==null){
+            if(ceEmpleadoEjb.find(ceEmpleado.getEmpidempleado())==null){
                 //ceEmpleado.setEmpIdProyecto(idProy);
                 ceEmpleadoEjb.create(ceEmpleado);
             }else{

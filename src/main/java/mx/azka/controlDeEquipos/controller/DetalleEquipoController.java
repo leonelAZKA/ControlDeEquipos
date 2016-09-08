@@ -9,9 +9,12 @@ import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacadeLocal;
-import mx.azka.controlDeEquipos.ejb.CeEquiposFacadeLocal;
+import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacade;
+
+import mx.azka.controlDeEquipos.ejb.CeEquiposFacade;
+
 import mx.azka.controlDeEquipos.entity.CeEmpleado;
+
 import mx.azka.controlDeEquipos.entity.CeEquipos;
 
 @Named
@@ -19,9 +22,11 @@ import mx.azka.controlDeEquipos.entity.CeEquipos;
 public class DetalleEquipoController implements Serializable{
     
  @EJB
-    private CeEquiposFacadeLocal equiposEjb;
+
+    private CeEquiposFacade equiposEjb;
  @EJB
-    private CeEmpleadoFacadeLocal empleadoEjb;
+    private CeEmpleadoFacade empleadoEjb;
+
     private CeEquipos equipos;
 
     public CeEquipos getEquipos() {
@@ -60,7 +65,7 @@ public class DetalleEquipoController implements Serializable{
            while(iterator.hasNext()){
 CeEmpleado ce=iterator.next();
 
-listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " + ce.getEmpAppPaterno()+ " " + ce.getEmpAppMaterno()));
+listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " + ce.getEmpappPaterno()+ " " + ce.getEmpappMaterno()));
 }
             
             return listEmpleados;
@@ -78,8 +83,8 @@ listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " +
   public void guardar(){
   
         try{
-             System.out.println(equipos.getEquID());
-      if(equipos.getEquID()==0){
+             System.out.println(equipos.getEquid());
+      if(equipos.getEquid()==null){
 
           equiposEjb.create(equipos);
       }
@@ -95,23 +100,24 @@ listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " +
     }
  public void eliminar(){
         try{
-         equipos.setEmpIDEMPLEADO(155);
+        
             equiposEjb.remove(equipos);
         }catch(Exception e){
             //
         }
+
      
      
 
     }
 
-    private Object ceEmpelado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
  
 
 	
  
  
+
+    } 
+
     
-}

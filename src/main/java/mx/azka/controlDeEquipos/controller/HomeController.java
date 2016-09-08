@@ -1,33 +1,67 @@
 package mx.azka.controlDeEquipos.controller;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
-import java.util.UUID;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.ejb.EJB;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacade;
+import mx.azka.controlDeEquipos.ejb.CeEquiposFacade;
+import mx.azka.controlDeEquipos.entity.CeEmpleado;
+import mx.azka.controlDeEquipos.entity.CeEquipos;
 
-@ManagedBean (name = "homeController")
-@ApplicationScoped
 
-public class HomeController {
+@Named(value = "home")
+@ViewScoped
+public class homeController implements Serializable {
+
+    @EJB
+    private CeEmpleadoFacade ceEmpleadoFacade;
+    @EJB
+    private CeEquiposFacade ceEquiposFacade;
     
-    private final static String[] numero;
-
     
-    static{
-        numero = new String[10];
-        numero[0] = "2";
-        numero[1] = "3";
-        numero[2] = "4";
-        numero[3] = "5";
-        numero[4] = "6";
-        numero[5] = "7";
-        numero[6] = "8";
-        numero[7] = "9";
-        numero[8] = "10";
-        numero[9] = "11";
-        
+    private CeEmpleado ceEmpleado;
+    private CeEquipos ceEquipos;
+
+    public CeEmpleado getCeEmpleado() {
+        return ceEmpleado;
     }
+
+    public void setCeEmpleado(CeEmpleado ceEmpleado) {
+        this.ceEmpleado = ceEmpleado;
+    }
+
+    public CeEquipos getCeEquipos() {
+        return ceEquipos;
+    }
+
+    public void setCeEquipos(CeEquipos ceEquipos) {
+        this.ceEquipos = ceEquipos;
+    }
+
+    public homeController() {
+    }
+
+    public List<CeEmpleado> getAll() {
+        return ceEmpleadoFacade.findAll();
+    }
+    public List<CeEquipos>getAllEq(){
+            return ceEquiposFacade.findAll();
+    }
+       
+        
+      
+        
     
-    
+            
+        
+       
+      
+        
+        
 }

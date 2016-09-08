@@ -1,3 +1,4 @@
+
 package mx.azka.controlDeEquipos.entity;
 
 import java.io.Serializable;
@@ -12,20 +13,18 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+
 /**
  *
  * @author sat
+
  */
 @Entity
 @Table(name = "CEUSUARIO")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "CeUsuario.findAll", query = "SELECT c FROM CeUsuario c"),
-    @NamedQuery(name = "CeUsuario.findByIdusuario", query = "SELECT c FROM CeUsuario c WHERE c.idusuario = :idusuario"),
-    @NamedQuery(name = "CeUsuario.findByUsuusername", query = "SELECT c FROM CeUsuario c WHERE c.usuusername = :usuusername"),
-    @NamedQuery(name = "CeUsuario.findByUsudepartamento", query = "SELECT c FROM CeUsuario c WHERE c.usudepartamento = :usudepartamento"),
-    @NamedQuery(name = "CeUsuario.findByCeempleadoEmpidempleado", query = "SELECT c FROM CeUsuario c WHERE c.ceempleadoEmpidempleado = :ceempleadoEmpidempleado"),
-    @NamedQuery(name = "CeUsuario.findByUsupassword", query = "SELECT c FROM CeUsuario c WHERE c.usupassword = :usupassword")})
+
+
+    
 public class CeUsuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -66,6 +65,7 @@ public class CeUsuario implements Serializable {
 
     public void setUsuusername(String usuusername) {
         this.usuusername = usuusername;
+
     }
 
     public String getUsudepartamento() {
@@ -75,6 +75,7 @@ public class CeUsuario implements Serializable {
     public void setUsudepartamento(String usudepartamento) {
         this.usudepartamento = usudepartamento;
     }
+
 
     public Long getCeempleadoEmpidempleado() {
         return ceempleadoEmpidempleado;
@@ -90,23 +91,28 @@ public class CeUsuario implements Serializable {
 
     public void setUsupassword(String usupassword) {
         this.usupassword = usupassword;
+
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
+
         hash += (idusuario != null ? idusuario.hashCode() : 0);
+
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CeUsuario)) {
             return false;
         }
         CeUsuario other = (CeUsuario) object;
         if ((this.idusuario == null && other.idusuario != null) || (this.idusuario != null && !this.idusuario.equals(other.idusuario))) {
+
             return false;
         }
         return true;
@@ -114,7 +120,9 @@ public class CeUsuario implements Serializable {
 
     @Override
     public String toString() {
+
         return "mx.azka.controlDeEquipos.entity.CeUsuario[ idusuario=" + idusuario + " ]";
+
     }
     
 }
