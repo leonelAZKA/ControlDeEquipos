@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Detalle Equipos</title>
+        <link rel="icon" href="http://www.azka-it.com/wp-content/uploads/2015/01/favicon3-80x80.png" type="image/png"/>
+  
+    </h:head>
+    <h:body>
+        <div align="center">
+        <h1>DETALLE EQUIPOS</h1>
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+                 <p:outputLabel value="ID Equipo"/>
+                 <p:inputText id="idEquipo"  value="#{detalleEquipoController.equipos.equID}"  />
+             
+                <p:outputLabel  value="Marca Equipo: "/>
+                <p:inputText  id="EQUMARCAE" placeholder="Marca del Equipo" value="#{detalleEquipoController.equipos.equMARCAE}" />
+                
+                
+                <p:outputLabel value="Modelo Equipo:" />
+                <p:inputText id="EQUMODELO" placeholder="Modelo del Equipo" value="#{detalleEquipoController.equipos.equMODELO}"/>
+                
+                <p:outputLabel value="Empleado:"/>
+                <p:selectOneMenu id="combo" value="#{detalleEquipoController.equipos.empIDEMPLEADO}">
+                        <f:selectItem itemLabel="Select..."  noSelectionOption="true"/>
+                        <f:selectItems value="#{detalleEquipoController.allempleados}" />
+                    </p:selectOneMenu>
+                <p:outputLabel value="N/S Equipo:"/>
+                <p:inputText id="EQUNSE" placeholder="Num de serie del Equipo" value="#{detalleEquipoController.equipos.equNSE}" />
+                
+                <p:outputLabel value="Marca Cargador:"/>
+                <p:inputText id="EQUMARCAC" placeholder="Marca de Cargador" value="#{detalleEquipoController.equipos.equMARCAC}" />
+                
+                <p:outputLabel value="N/S Cargador:"/>
+                <p:inputText id="EQUNSC" placeholder="Num Serie Cargador" value="#{detalleEquipoController.equipos.equNSC}" />
+                
+                <p:outputLabel value="Memoria RAM:"/>
+                <p:inputText id="EQUMEMORIA" placeholder="Capacidad de la memoria RAM" value="#{detalleEquipoController.equipos.equMEMORIA}"/>
+                
+                <p:outputLabel value="Memoria Disco Duro:"/>
+                <p:inputText id="EQUDISCO_DURO" placeholder="Capacidad del Disco Duro" value="#{detalleEquipoController.equipos.equDISCODURO}" />
+                
+                <p:outputLabel value="Adicional:"/>
+                <p:inputText id="EQUADICIONAL" placeholder="Equipos adicionales" value="#{detalleEquipoController.equipos.equADICIONAL}" />
+                
+                <p:outputLabel  value="Fecha Inicio:"  for="fechaInicio"/>
+                <p:calendar id="fechaInicio" value="#{detalleEquipoController.equipos.equFECHAINICIO}" showOn="button" />
+        
+                <p:outputLabel for="fechaFin" value="Fecha Fin:" />
+                <p:calendar id="fechaFin" value="#{detalleEquipoController.equipos.equFECHAFIN}" showOn="button" />
+                <p:outputLabel for="fechaCompra" value="Fecha Compra:" />
+                <p:calendar id="fechaCompra" value="#{detalleEquipoController.equipos.equFECHACOMPRA}" showOn="button" /> 
+                <p:commandButton  value="Editar" icon="ui-icon-pencil"/>
+                
+                <p:commandButton  value="Eliminar" icon="ui-icon-trash" actionListener="#{detalleEquipoController.eliminar()}"/>
+
+                <p:commandButton  value="Guardar" icon="ui-icon-folder" actionListener="#{detalleEquipoController.guardar()}"/>
+               
+            </h:panelGrid>
+        </h:form>
+        </div>
+    </h:body>
+</html>
