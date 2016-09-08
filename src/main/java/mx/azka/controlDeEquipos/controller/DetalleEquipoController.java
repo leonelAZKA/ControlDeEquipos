@@ -2,6 +2,7 @@ package mx.azka.controlDeEquipos.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -22,9 +23,20 @@ public class DetalleEquipoController implements Serializable{
  @EJB
     private CeEmpleadoFacadeLocal empleadoEjb;
     private CeEquipos equipos;
-    private CeEmpleado ceEmpelado;
-    private int idemp;
 
+    public CeEquipos getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(CeEquipos equipos) {
+        this.equipos = equipos;
+    }
+    private CeEmpleado ceEmpelado;
+    private List<SelectItem> listEmpleados;
+    private int idemp;
+    
+
+ 
     public CeEmpleado getCeEmpelado() {
         return ceEmpelado;
     }
@@ -33,30 +45,25 @@ public class DetalleEquipoController implements Serializable{
         this.ceEmpelado = ceEmpelado;
     }
    
-    private List< SelectItem> listEmpleados;
-    public CeEquipos getEquipos() {
-        return equipos;
-    }
+
     
 
   
     
  public List<SelectItem> getAllempleados() {
-            List<CeEmpleado> al = empleadoEjb.findAll();
+
+            Iterator<CeEmpleado> iterator= empleadoEjb.findAll().iterator();
             listEmpleados = new ArrayList< SelectItem>();
-            int i = 0;
-            for (CeEmpleado empleado: al) {
-                listEmpleados.add(new SelectItem(i, empleado.getEmpNombre()+ " "+ empleado.getEmpAppPaterno()+" "+empleado.getEmpAppMaterno()));
-                idemp=empleado.getEmpIdEmpleado();
-                i++;
-            }
+           while(iterator.hasNext()){
+CeEmpleado ce=iterator.next();
+
+listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " + ce.getEmpAppPaterno()+ " " + ce.getEmpAppMaterno()));
+}
+            
             return listEmpleados;
     }
- 
- 
-     public void setEquipos(CeEquipos equipos) {
-        this.equipos = equipos;
-    }
+   
+
       
     @PostConstruct
     public void init(){
@@ -70,13 +77,13 @@ public class DetalleEquipoController implements Serializable{
         try{
              System.out.println(equipos.getEquID());
       if(equipos.getEquID()==0){
-          equipos.setEmpIDEMPLEADO(idemp);
+    
           equiposEjb.create(equipos);
       }
       else
       {
            System.out.println("Entra a modificar detalle empleado");
-            equipos.setEmpIDEMPLEADO(idemp);
+     
           equiposEjb.edit(equipos);
       }
         }catch(Exception e){
@@ -90,7 +97,7 @@ public class DetalleEquipoController implements Serializable{
         }catch(Exception e){
             //
         }
-        
+     
      
 
     }
