@@ -19,10 +19,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-<<<<<<< Updated upstream
-        <welcome-file>faces/vistasCE/detalleEquipo_1.xhtml</welcome-file>
-=======
-        <welcome-file>faces/vistasCE/detalleEquipo.xhtml</welcome-file>
->>>>>>> Stashed changes
+        <welcome-file>faces/vistasCE/CeLogin.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>

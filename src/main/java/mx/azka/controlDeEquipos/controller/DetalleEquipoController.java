@@ -32,13 +32,11 @@ public class DetalleEquipoController implements Serializable{
         this.equipos = equipos;
     }
     private CeEmpleado ceEmpelado;
-<<<<<<< Updated upstream
+
     private List<SelectItem> listEmpleados;
     private int idemp;
     
-=======
-    private int idemp;
->>>>>>> Stashed changes
+
 
  
     public CeEmpleado getCeEmpelado() {
@@ -58,21 +56,13 @@ public class DetalleEquipoController implements Serializable{
 
             Iterator<CeEmpleado> iterator= empleadoEjb.findAll().iterator();
             listEmpleados = new ArrayList< SelectItem>();
-<<<<<<< Updated upstream
+
            while(iterator.hasNext()){
 CeEmpleado ce=iterator.next();
 
 listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " + ce.getEmpAppPaterno()+ " " + ce.getEmpAppMaterno()));
 }
             
-=======
-            int i = 0;
-            for (CeEmpleado empleado: al) {
-                listEmpleados.add(new SelectItem(ceEmpelado()));
-                i++;
-                
-            }
->>>>>>> Stashed changes
             return listEmpleados;
     }
    
@@ -90,21 +80,13 @@ listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " +
         try{
              System.out.println(equipos.getEquID());
       if(equipos.getEquID()==0){
-<<<<<<< Updated upstream
-    
-=======
-          equipos.setEmpIDEMPLEADO(idemp);
->>>>>>> Stashed changes
+
           equiposEjb.create(equipos);
       }
       else
       {
            System.out.println("Entra a modificar detalle empleado");
-<<<<<<< Updated upstream
-     
-=======
-            equipos.setEmpIDEMPLEADO(idemp);
->>>>>>> Stashed changes
+
           equiposEjb.edit(equipos);
       }
         }catch(Exception e){

@@ -1,16 +1,18 @@
 mx\azka\controlDeEquipos\entity\CeProyecto.class
+mx\azka\controlDeEquipos\controller\DetalleUsuarioController.class
 mx\azka\controlDeEquipos\ejb\AbstractFacade.class
 mx\azka\controlDeEquipos\controller\Administrador.class
-mx\azka\controlDeEquipos\ejb\CeComentariosFacade.class
 mx\azka\controlDeEquipos\ejb\CePermisosFacade.class
+mx\azka\controlDeEquipos\ejb\CeComentariosFacade.class
 mx\azka\controlDeEquipos\ejb\CeEmpleadoFacade.class
+mx\azka\controlDeEquipos\controller\LoginBean.class
 mx\azka\controlDeEquipos\entity\CePermisos_.class
-mx\azka\controlDeEquipos\ejb\CeComentariosFacadeLocal.class
 mx\azka\controlDeEquipos\ejb\CeEquiposFacadeLocal.class
+mx\azka\controlDeEquipos\ejb\CeComentariosFacadeLocal.class
 mx\azka\controlDeEquipos\entity\CeUsuario_.class
 mx\azka\controlDeEquipos\controller\HomeController.class
-mx\azka\controlDeEquipos\controller\DetalleEquipoController.class
 mx\azka\controlDeEquipos\ejb\CeEquiposFacade.class
+mx\azka\controlDeEquipos\controller\DetalleEquipoController.class
 mx\azka\controlDeEquipos\ejb\CeUsuarioFacade.class
 mx\azka\controlDeEquipos\ejb\CeEmpleadoFacadeLocal.class
 mx\azka\controlDeEquipos\ejb\CePermisosFacadeLocal.class
@@ -29,3 +31,4 @@ mx\azka\controlDeEquipos\entity\CeComentarios_.class
 mx\azka\controlDeEquipos\ejb\CeProyectoFacade.class
 mx\azka\controlDeEquipos\entity\CePermisos.class
 mx\azka\controlDeEquipos\entity\CeProyecto_.class
+mx\azka\controlDeEquipos\controller\LoginController.class
