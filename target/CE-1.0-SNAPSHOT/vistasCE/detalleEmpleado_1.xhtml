@@ -7,7 +7,6 @@
     <h:head>
         <title>Detalle Empleado</title>
         <link rel="icon" href="http://www.azka-it.com/wp-content/uploads/2015/01/favicon3-80x80.png" type="image/png"/>
-
     </h:head>
     <h:body>
         <div align="center">
@@ -15,24 +14,24 @@
         <h:form>
             <h:panelGrid columns="2" cellpadding="5">
                 <p:outputLabel value="ID Empleado"/>
-                <p:inputText id="EMPIDEMPLEADO"  value="#{detalleEmpleado.ceEmpleado.empIdEmpleado}" />
+                <p:inputText id="EMPIDEMPLEADO"  value="#{detalleEmpleado.ceEmpleado.empIdEmpleado}" disabled="TRUE"/>
                 
                 <p:outputLabel value="Nombre"/>
-                <p:inputText id="EMPNOMBRE"  value="#{detalleEmpleado.ceEmpleado.empNombre}" placeholder="Nombre"/>
+                <p:inputText id="EMPNOMBRE"  value="#{detalleEmpleado.ceEmpleado.empNombre}" placeholder="Nombre" disabled="TRUE"/>
                 
                 <p:outputLabel value="Apellido Paterno"/>
-                <p:inputText id="EMPAPP_PATERNO"  value="#{detalleEmpleado.ceEmpleado.empAppPaterno}" placeholder="Apellido Paterno"/>
+                <p:inputText id="EMPAPP_PATERNO"  value="#{detalleEmpleado.ceEmpleado.empAppPaterno}" placeholder="Apellido Paterno" disabled="TRUE"/>
                 
                 <p:outputLabel value="Apellido Materno"/>
-                <p:inputText id="EMPAPP_MATERNO"  value="#{detalleEmpleado.ceEmpleado.empAppMaterno}" placeholder="Apellido Materno" />
+                <p:inputText id="EMPAPP_MATERNO"  value="#{detalleEmpleado.ceEmpleado.empAppMaterno}" placeholder="Apellido Materno" disabled="TRUE"/>
                 
                 <p:outputLabel value="Proyecto"/>
-                <p:selectOneMenu id="comboProyecto" value="#{detalleEmpleado.ceEmpleado.empIdProyecto}">
+                <p:selectOneMenu id="comboProyecto" value="#{detalleEmpleado.ceEmpleado.empIdProyecto}" disabled="TRUE">
                         <f:selectItem itemLabel="Select..."  noSelectionOption="true"/>
                         <f:selectItems value="#{detalleEmpleado.allProyecto}" />
                     </p:selectOneMenu>
                 
-                <p:commandButton  value="Editar" icon="ui-icon-pencil" />
+                <p:commandButton  value="Editar" icon="ui-icon-pencil" action="detalleEmpleado.xhtml"/>
                 
                 <p:commandButton  value="Eliminar" icon="ui-icon-trash" actionListener="#{detalleEmpleado.eliminar()}"/>
 
