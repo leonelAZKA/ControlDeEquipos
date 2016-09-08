@@ -15,7 +15,7 @@ import mx.azka.controlDeEquipos.entity.CeEquipos;
 
 @Named
 @ViewScoped
-public class HomeController {
+public class homeController {
    @EJB
    private CeEquiposFacadeLocal service;
    

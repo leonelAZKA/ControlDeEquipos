@@ -2,28 +2,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-     <h:body style="text-align: center">
+      
+      
+      >
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        
+        <p:tooltip />
+        
         <h:form>
-    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+            
+            
  
-    <p:dialog header="Login" widgetVar="dlg" resizable="false">
-        <h:panelGrid columns="2" cellpadding="5">
-            <h:outputLabel for="username" value="Username:" />
-            <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
- 
-            <h:outputLabel for="password" value="Password:" />
-            <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
- 
-            <f:facet name="footer">
-                <p:commandButton value="Login" update="growl" actionListener="#{userLoginView.login}"
-                 oncomplete="handleLoginRequest(xhr, status, args)" />
-            </f:facet>  
-        </h:panelGrid>
-    </p:dialog>
-    </h:form>
+
+            <h:panelGrid id="grid" columns="3" style="position: absolute; top: 150px; left: 500px;">
+
+                <f:facet name="header">Login</f:facet>
+                
+                
+
+                <p:outputLabel for="usuusername" value="Username:" />
+                <p:inputText id="usuusername" value="#{loginController.loginBean.usuusername}" required="true" label="username"/>
+                <p:message for="usuusername" display="tooltip" />
+                
+                <p:outputLabel for="usupassword" value="Password:" />
+                <p:password id="usupassword" value="#{loginController.loginBean.usupassword}" required="true" label="password"/>
+                <p:message for="usupassword" display="tooltip" />
+                
+                <f:facet name="footer">
+                    <p:commandButton id="submitButton" value="Login" action="#{loginController.validarUsuario()}" update="grid"/>
+                </f:facet>  
+            </h:panelGrid>
+
+        </h:form>
     </h:body>
-
-
 </html>

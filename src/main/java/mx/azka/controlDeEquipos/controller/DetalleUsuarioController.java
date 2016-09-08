@@ -64,15 +64,15 @@ public class DetalleUsuarioController implements Serializable{
   public void guardar(){
         try{
         
-      if(usuario.getIdUsuarios()==0){
+      if(usuario.getIdusuario()==0){
           
-          usuario.setIdEmpleado(154);
+      
           usuarioEjb.create(usuario);
       }
       else
       {
            System.out.println("Entra a modificar detalle empleado");
-            usuario.setIdEmpleado(154);
+        
           usuarioEjb.edit(usuario);
       }
         }catch(Exception e){
@@ -82,7 +82,7 @@ public class DetalleUsuarioController implements Serializable{
 
  public void eliminar(){
         try{
-         usuario.setIdEmpleado(155);
+ 
             usuarioEjb.remove(usuario);
         }catch(Exception e){
             //

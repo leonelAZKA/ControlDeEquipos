@@ -1,4 +1,3 @@
-
 package mx.azka.controlDeEquipos.ejb;
 
 import javax.ejb.Stateless;

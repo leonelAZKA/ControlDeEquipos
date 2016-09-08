@@ -1,18 +1,17 @@
-package mx.azka.controlDeEquipos.bo;
+package mx.azka.controlDeEquipos.controller;
 
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 
-
-@Named(value = "ceUsuarioBean")
+@Named(value = "loginBean")
 @SessionScoped
-public class CeUsuarioBean implements Serializable {
-    
-    private Long idusuario;   
-    private String usuusername;    
-    private String usudepartamento;   
-    private Long ceempleadoEmpidempleado;  
+public class LoginBean implements Serializable {
+
+    private Long idusuario;
+    private String usuusername;
+    private String usudepartamento;
+    private Long ceempleadoEmpidempleado;
     private String usupassword;
 
     public Long getIdusuario() {
@@ -55,6 +54,6 @@ public class CeUsuarioBean implements Serializable {
         this.usupassword = usupassword;
     }
 
-    public CeUsuarioBean() {
+    public LoginBean() {
     }
 }
