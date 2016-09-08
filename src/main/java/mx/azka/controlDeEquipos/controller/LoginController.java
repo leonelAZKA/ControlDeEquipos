@@ -1,7 +1,6 @@
 package mx.azka.controlDeEquipos.controller;
 
 
-
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -9,14 +8,12 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import mx.azka.controlDeEquipos.bo.CeUsuarioBean;
-import mx.azka.controlDeEquipos.ejb.CeusuarioFacade;
+import mx.azka.controlDeEquipos.ejb.CeUsuarioFacade;
 import mx.azka.controlDeEquipos.entity.CeUsuario;
 import org.primefaces.context.RequestContext;
 
@@ -25,8 +22,7 @@ import org.primefaces.context.RequestContext;
 public class LoginController implements Serializable {
 
     @EJB
-
-    CeusuarioFacade ceUsuarioFacade;
+    CeUsuarioFacade ceUsuarioFacade;
     @Inject
     CeUsuarioBean ceUsuarioBean;
     private String usuusername;
@@ -44,19 +40,17 @@ public class LoginController implements Serializable {
     }
 
     public String delete(CeUsuario ce) {
-       ceUsuarioFacade.remove(ce);
+        ceUsuarioFacade.remove(ce);
         return null;
 
     }
 
     public String validarUsuario() {
 
-
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("PU_CE");
         EntityManager em = emf.createEntityManager();
 
         try {
-
 
 
             Object result = em.createQuery("SELECT c FROM CeUsuario c WHERE c.usuusername = :usuusername and c.usupassword = :usupassword")
@@ -101,6 +95,5 @@ public class LoginController implements Serializable {
 
     public void setUsupassword(String usupassword) {
         this.usupassword = usupassword;
-
     }
 }

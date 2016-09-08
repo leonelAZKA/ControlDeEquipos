@@ -14,19 +14,19 @@
         <h:form>
             <h:panelGrid columns="2" cellpadding="5">
                 <p:outputLabel value="ID Empleado"/>
-                <p:inputText id="EMPIDEMPLEADO"  value="#{detalleEmpleado.ceEmpleado.empidempleado}" disabled="TRUE"/>
+                <p:inputText id="EMPIDEMPLEADO"  value="#{detalleEmpleado.ceEmpleado.empIdEmpleado}" disabled="TRUE"/>
                 
                 <p:outputLabel value="Nombre"/>
-                <p:inputText id="EMPNOMBRE"  value="#{detalleEmpleado.ceEmpleado.empnombre}" placeholder="Nombre" disabled="TRUE"/>
+                <p:inputText id="EMPNOMBRE"  value="#{detalleEmpleado.ceEmpleado.empNombre}" placeholder="Nombre" disabled="TRUE"/>
                 
                 <p:outputLabel value="Apellido Paterno"/>
-                <p:inputText id="EMPAPP_PATERNO"  value="#{detalleEmpleado.ceEmpleado.empappPaterno}" placeholder="Apellido Paterno" disabled="TRUE"/>
+                <p:inputText id="EMPAPP_PATERNO"  value="#{detalleEmpleado.ceEmpleado.empAppPaterno}" placeholder="Apellido Paterno" disabled="TRUE"/>
                 
                 <p:outputLabel value="Apellido Materno"/>
-                <p:inputText id="EMPAPP_MATERNO"  value="#{detalleEmpleado.ceEmpleado.empappMaterno}" placeholder="Apellido Materno" disabled="TRUE"/>
+                <p:inputText id="EMPAPP_MATERNO"  value="#{detalleEmpleado.ceEmpleado.empAppMaterno}" placeholder="Apellido Materno" disabled="TRUE"/>
                 
                 <p:outputLabel value="Proyecto"/>
-                <p:selectOneMenu id="comboProyecto" value="#{detalleEmpleado.ceEmpleado.empidproyecto}" disabled="TRUE">
+                <p:selectOneMenu id="comboProyecto" value="#{detalleEmpleado.ceEmpleado.empIdProyecto}" disabled="TRUE">
                         <f:selectItem itemLabel="Select..."  noSelectionOption="true"/>
                         <f:selectItems value="#{detalleEmpleado.allProyecto}" />
                     </p:selectOneMenu>

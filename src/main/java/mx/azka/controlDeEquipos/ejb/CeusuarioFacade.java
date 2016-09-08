@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mx.azka.controlDeEquipos.ejb;
 
 import javax.ejb.Stateless;
@@ -9,12 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import mx.azka.controlDeEquipos.entity.CeUsuario;
 
-/**
- *
- * @author Rogelio
- */
+
 @Stateless
-public class CeusuarioFacade extends AbstractFacade<CeUsuario> {
+public class CeUsuarioFacade extends AbstractFacade<CeUsuario> implements CeUsuarioFacadeLocal {
     @PersistenceContext(unitName = "PU_CE")
     private EntityManager em;
 
@@ -23,7 +17,7 @@ public class CeusuarioFacade extends AbstractFacade<CeUsuario> {
         return em;
     }
 
-    public CeusuarioFacade() {
+    public CeUsuarioFacade() {
         super(CeUsuario.class);
     }
     

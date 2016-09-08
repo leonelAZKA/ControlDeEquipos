@@ -5,7 +5,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import mx.azka.controlDeEquipos.ejb.CeProyectoFacade;
+import mx.azka.controlDeEquipos.ejb.CeProyectoFacadeLocal;
 import mx.azka.controlDeEquipos.entity.CeProyecto;
 
 
@@ -14,7 +14,7 @@ import mx.azka.controlDeEquipos.entity.CeProyecto;
 public class ProyectoController implements Serializable{
     
     @EJB
-    private CeProyectoFacade proyectoEjb;
+    private CeProyectoFacadeLocal proyectoEjb;
     private CeProyecto ceProyecto;
 
     public CeProyecto getCeProyecto() {

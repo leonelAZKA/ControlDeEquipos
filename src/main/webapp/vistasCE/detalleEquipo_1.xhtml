@@ -15,45 +15,45 @@
         <h:form>
             <h:panelGrid columns="2" cellpadding="5">
                  <p:outputLabel value="ID Equipo"/>
-                 <p:inputText id="idEquipo"  value="#{detalleEquipoController.equipos.equid}" disabled="true" />
+                 <p:inputText id="idEquipo"  value="#{detalleEquipoController.equipos.equID}" disabled="true" />
              
                 <p:outputLabel  value="Marca Equipo: "/>
-                <p:inputText  id="EQUMARCAE" placeholder="Marca del Equipo" value="#{detalleEquipoController.equipos.equmarcae}" disabled="true" />
+                <p:inputText  id="EQUMARCAE" placeholder="Marca del Equipo" value="#{detalleEquipoController.equipos.equMARCAE}" disabled="true" />
                 
                 
                 <p:outputLabel value="Modelo Equipo:" />
-                <p:inputText id="EQUMODELO" placeholder="Modelo del Equipo" value="#{detalleEquipoController.equipos.equmodelo}" disabled="true"/>
+                <p:inputText id="EQUMODELO" placeholder="Modelo del Equipo" value="#{detalleEquipoController.equipos.equMODELO}" disabled="true"/>
                 
                 <p:outputLabel value="Empleado:"/>
-                <p:selectOneMenu id="combo" value="#{detalleEquipoController.equipos.ceempleadoEmpidempleado}" disabled="true">
+                     <p:selectOneMenu id="combo" value="#{detalleEquipoController.equipos.empIDEMPLEADO}" disabled="true">
                         <f:selectItem itemLabel="Select..."  noSelectionOption="true"/>
                         <f:selectItems value="#{detalleEquipoController.allempleados}" />
                     </p:selectOneMenu>
                 <p:outputLabel value="N/S Equipo:"/>
-                <p:inputText id="EQUNSE" placeholder="Num de serie del Equipo" value="#{detalleEquipoController.equipos.equnse}" disabled="true"/>
+                <p:inputText id="EQUNSE" placeholder="Num de serie del Equipo" value="#{detalleEquipoController.equipos.equNSE}" disabled="true"/>
                 
                 <p:outputLabel value="Marca Cargador:"/>
-                <p:inputText id="EQUMARCAC" placeholder="Marca de Cargador" value="#{detalleEquipoController.equipos.equmarcac}" disabled="true"/>
+                <p:inputText id="EQUMARCAC" placeholder="Marca de Cargador" value="#{detalleEquipoController.equipos.equMARCAC}" disabled="true"/>
                 
                 <p:outputLabel value="N/S Cargador:"/>
-                <p:inputText id="EQUNSC" placeholder="Num Serie Cargador" value="#{detalleEquipoController.equipos.equnsc}" disabled="true"/>
+                <p:inputText id="EQUNSC" placeholder="Num Serie Cargador" value="#{detalleEquipoController.equipos.equNSC}" disabled="true"/>
                 
                 <p:outputLabel value="Memoria RAM:"/>
-                <p:inputText id="EQUMEMORIA" placeholder="Capacidad de la memoria RAM" value="#{detalleEquipoController.equipos.equmemoria}" disabled="true"/>
+                <p:inputText id="EQUMEMORIA" placeholder="Capacidad de la memoria RAM" value="#{detalleEquipoController.equipos.equMEMORIA}" disabled="true"/>
                 
                 <p:outputLabel value="Memoria Disco Duro:"/>
-                <p:inputText id="EQUDISCO_DURO" placeholder="Capacidad del Disco Duro" value="#{detalleEquipoController.equipos.equdiscoDuro}" disabled="true"/>
+                <p:inputText id="EQUDISCO_DURO" placeholder="Capacidad del Disco Duro" value="#{detalleEquipoController.equipos.equDISCODURO}" disabled="true"/>
                 
                 <p:outputLabel value="Adicional:"/>
-                <p:inputText id="EQUADICIONAL" placeholder="Equipos adicionales" value="#{detalleEquipoController.equipos.equadicional}" disabled="true"/>
+                <p:inputText id="EQUADICIONAL" placeholder="Equipos adicionales" value="#{detalleEquipoController.equipos.equADICIONAL}" disabled="true"/>
                 
                 <p:outputLabel  value="Fecha Inicio:"  for="fechaInicio"/>
-                <p:calendar id="fechaInicio" value="#{detalleEquipoController.equipos.equfechaInicio}" showOn="button" disabled="true"/>
+                <p:calendar id="fechaInicio" value="#{detalleEquipoController.equipos.equFECHAINICIO}" showOn="button" disabled="true"/>
         
                 <p:outputLabel for="fechaFin" value="Fecha Fin:" />
-                <p:calendar id="fechaFin" value="#{detalleEquipoController.equipos.equfechaFin}" showOn="button" disabled="true"/>
+                <p:calendar id="fechaFin" value="#{detalleEquipoController.equipos.equFECHAFIN}" showOn="button" disabled="true"/>
                 <p:outputLabel for="fechaCompra" value="Fecha Compra:" />
-                <p:calendar id="fechaCompra" value="#{detalleEquipoController.equipos.equfechaCompra}" showOn="button" disabled="true"/> 
+                <p:calendar id="fechaCompra" value="#{detalleEquipoController.equipos.equFECHACOMPRA}" showOn="button" disabled="true"/> 
                 <p:commandButton  value="Editar" icon="ui-icon-pencil" action="detalleEquipo.xhtml"/>
                 
                 <p:commandButton  value="Eliminar" icon="ui-icon-trash" actionListener="#{detalleEquipoController.eliminar()}"/>

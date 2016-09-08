@@ -16,40 +16,46 @@
                 </f:facet> 
             </p:toolbar>
             
-            <p:dataTable>
-                <f:facet name="header">
-                    <p:outputPanel>
-                        <h:outputText value="Buscar"/>
-                        <p:inputText />
-                    </p:outputPanel>
-                </f:facet>
-                
+            <p:dataTable value="#{homeController.all}" var="item">
+                    <f:facet name="header">
+                        <p:outputPanel>
+                            <h:outputText value="Buscar"/>
+                            <p:inputText value="variable" />
+                        </p:outputPanel>
+                    </f:facet>
+
                 <p:column headerText="Numero de empleado">
-                    <h:outputText value="Numero de empleado"/>
-                </p:column>
+                    <h:outputText value="#{item.empIDEMPLEADO}"/>
+                    </p:column>
                 
-                <p:column headerText="Nombre">
-                    <h:outputText value="Nombre"/>
-                </p:column>
+                     <p:column headerText="Numero de equipo">
+                         <h:outputText value="#{item.equNSC}"/>
+                    </p:column>
+                     
+
+                    <p:column headerText="Marca Equipo">
+                        <h:outputText value="#{item.equMARCAC}"/>
+                    </p:column>
+
+                    <p:column headerText="No de serie Equipo">
+                        <h:outputText value="#{item.equNSE}"/>
+                    </p:column>
+
+                    <p:column headerText="Marca de cargador">
+                        <h:outputText value="#{item.equMARCAC}"/>
+                    </p:column>
+
+                    <p:column headerText="N° serie cagador">
+                        <h:outputText value="#{item.equNSC}"/>
+
+                    </p:column>
                 
-                <p:column headerText="Marca">
-                    <h:outputText value="Marca"/>
-                </p:column>
-                
-                <p:column headerText="No de serie">
-                    <h:outputText value="hola"/>
-                </p:column>
-                
-                <p:column headerText="Marca de cargador">
-                    <h:outputText value="Marca de cargador"/>
-                </p:column>
-                
-                <p:column headerText="Marca de cargador">
-                     <h:outputText value="Marca de cargador"/>
-                     <p>hola</p>
-                </p:column>
-                
-            </p:dataTable>
+                 <p:column style="width:32px;text-align: center">
+             <p:commandButton action="detalleEmpleado.xhtml" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
+                 <f:setPropertyActionListener value="#{item}" target="#{homeController.ceEquipos}" />
+            </p:commandButton>
+          </p:column>
+                </p:dataTable>
         </h:form>
     </h:body>
 </html>

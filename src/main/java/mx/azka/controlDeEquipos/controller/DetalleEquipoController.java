@@ -9,12 +9,9 @@ import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacade;
-
-import mx.azka.controlDeEquipos.ejb.CeEquiposFacade;
-
+import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacadeLocal;
+import mx.azka.controlDeEquipos.ejb.CeEquiposFacadeLocal;
 import mx.azka.controlDeEquipos.entity.CeEmpleado;
-
 import mx.azka.controlDeEquipos.entity.CeEquipos;
 
 @Named
@@ -22,11 +19,9 @@ import mx.azka.controlDeEquipos.entity.CeEquipos;
 public class DetalleEquipoController implements Serializable{
     
  @EJB
-
-    private CeEquiposFacade equiposEjb;
+    private CeEquiposFacadeLocal equiposEjb;
  @EJB
-    private CeEmpleadoFacade empleadoEjb;
-
+    private CeEmpleadoFacadeLocal empleadoEjb;
     private CeEquipos equipos;
 
     public CeEquipos getEquipos() {
@@ -39,8 +34,10 @@ public class DetalleEquipoController implements Serializable{
     private CeEmpleado ceEmpelado;
 
     private List<SelectItem> listEmpleados;
-    private int idemp;
+
     
+
+   
 
 
  
@@ -65,9 +62,11 @@ public class DetalleEquipoController implements Serializable{
            while(iterator.hasNext()){
 CeEmpleado ce=iterator.next();
 
-listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " + ce.getEmpappPaterno()+ " " + ce.getEmpappMaterno()));
-}
-            
+listEmpleados.add(new SelectItem(ce.getEmpIdEmpleado(), ce.getEmpNombre()+ " " + ce.getEmpAppPaterno()+ " " + ce.getEmpAppMaterno()));
+
+                
+            }
+
             return listEmpleados;
     }
    
@@ -83,14 +82,19 @@ listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " +
   public void guardar(){
   
         try{
-             System.out.println(equipos.getEquid());
-      if(equipos.getEquid()==null){
+             System.out.println(equipos.getEquID());
+      if(equipos.getEquID()==0){
+
+  
 
           equiposEjb.create(equipos);
       }
       else
       {
            System.out.println("Entra a modificar detalle empleado");
+
+     
+ 
 
           equiposEjb.edit(equipos);
       }
@@ -100,24 +104,17 @@ listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " +
     }
  public void eliminar(){
         try{
-        
+         equipos.setEmpIDEMPLEADO(155);
             equiposEjb.remove(equipos);
         }catch(Exception e){
             //
         }
-
      
      
 
     }
 
-   
+}
  
 
 	
- 
- 
-
-    } 
-
-    

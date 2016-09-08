@@ -14,7 +14,7 @@
            <br></br>
             <p:outputLabel value="Empleado:"/>
             <br></br>
-            <p:selectOneMenu id="combo" value="#{detalleUsuarioController.usuario.ceempleadoEmpidempleado}">
+            <p:selectOneMenu id="combo" value="#{detalleUsuarioController.usuario.idEmpleado}">
                         <f:selectItem itemLabel="Select..."  noSelectionOption="true"/>
                         <f:selectItems value="#{detalleEquipoController.allempleados}" />
                     </p:selectOneMenu>
@@ -24,7 +24,7 @@
                
             <p:outputLabel for="USUDEPARTAMENTO" value="Departamento" />
             <br></br>
-            <p:selectOneMenu id="USUDEPARTAMENTO" value="#{detalleUsuarioController.usuario.usudepartamento}" style="width:125px">
+            <p:selectOneMenu id="USUDEPARTAMENTO" value="#{detalleUsuarioController.usuario.depto}" style="width:125px">
             <f:selectItem itemLabel="Select One" itemValue="" />
             <f:selectItem itemLabel="Talento Humano" itemValue="Talento Humano" />
             <f:selectItem itemLabel="Finanzas" itemValue="Finanzas" />
@@ -33,15 +33,15 @@
            <br></br>
             <p:outputLabel for="USUUSERNAME" value="Username" />
             <br></br>
-            <p:inputText id="USUUSERNAME"  value="#{detalleUsuarioController.usuario.usuusername}"/>
+            <p:inputText id="USUUSERNAME"  value="#{detalleUsuarioController.usuario.user}"/>
          <br></br>
             <p:outputLabel for="USUCONTRASEÑA" value="Contraseña" />
             <br></br>
-            <p:inputText id="USUCONTRASEÑA" value="#{detalleUsuarioController.usuario.usupassword}"/>       
+            <p:inputText id="USUCONTRASEÑA" value="#{detalleUsuarioController.usuario.pass}"/>       
             <br></br>
              <p:outputLabel for="IdUsuarios" value="IdUsru" />
             <br></br>
-            <p:inputText id="IdUsuarios" value="#{detalleUsuarioController.usuario.idusuario}"/>       
+            <p:inputText id="IdUsuarios" value="#{detalleUsuarioController.usuario.idUsuarios}"/>       
             <br></br>
             <br></br>
             

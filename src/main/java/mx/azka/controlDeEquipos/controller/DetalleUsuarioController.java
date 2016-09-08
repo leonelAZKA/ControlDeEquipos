@@ -2,16 +2,15 @@ package mx.azka.controlDeEquipos.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacade;
+import mx.azka.controlDeEquipos.ejb.CeEmpleadoFacadeLocal;
 
-import mx.azka.controlDeEquipos.ejb.CeusuarioFacade;
+import mx.azka.controlDeEquipos.ejb.CeUsuarioFacadeLocal;
 import mx.azka.controlDeEquipos.entity.CeEmpleado;
 
 import mx.azka.controlDeEquipos.entity.CeUsuario;
@@ -21,9 +20,9 @@ import mx.azka.controlDeEquipos.entity.CeUsuario;
 public class DetalleUsuarioController implements Serializable{
     
  @EJB
-    private CeusuarioFacade usuarioEjb;
+    private CeUsuarioFacadeLocal usuarioEjb;
  @EJB
-    private CeEmpleadoFacade empleadoEjb;
+    private CeEmpleadoFacadeLocal empleadoEjb;
     private CeUsuario usuario;
 
     public CeUsuario getUsuario() {
@@ -41,17 +40,15 @@ public class DetalleUsuarioController implements Serializable{
 
   
     
-public List<SelectItem> getAllempleados() {
-
-            Iterator<CeEmpleado> iterator= empleadoEjb.findAll().iterator();
+ public List<SelectItem> getAllempleados() {
+            List<CeEmpleado> al = empleadoEjb.findAll();
             listEmpleados = new ArrayList< SelectItem>();
-
-           while(iterator.hasNext()){
-CeEmpleado ce=iterator.next();
-
-listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " + ce.getEmpappPaterno()+ " " + ce.getEmpappMaterno()));
-}
-            
+            int i = 0;
+            for (CeEmpleado empleado: al) {
+                listEmpleados.add(new SelectItem(i, empleado.getEmpNombre()+ " "+ empleado.getEmpAppPaterno()+" "+empleado.getEmpAppMaterno()));
+                idemp=empleado.getEmpIdEmpleado();
+                i++;
+            }
             return listEmpleados;
     }
  
@@ -67,13 +64,15 @@ listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " +
   public void guardar(){
         try{
         
-      if(usuario.getIdusuario()==0){
+      if(usuario.getIdUsuarios()==0){
           
+          usuario.setIdEmpleado(154);
           usuarioEjb.create(usuario);
       }
       else
       {
            System.out.println("Entra a modificar detalle empleado");
+            usuario.setIdEmpleado(154);
           usuarioEjb.edit(usuario);
       }
         }catch(Exception e){
@@ -83,6 +82,7 @@ listEmpleados.add(new SelectItem(ce.getEmpidempleado(), ce.getEmpnombre()+ " " +
 
  public void eliminar(){
         try{
+         usuario.setIdEmpleado(155);
             usuarioEjb.remove(usuario);
         }catch(Exception e){
             //
